@@ -1,6 +1,7 @@
 import * as THREE from '../shared/vendor/three.module.js';
 import {createWalker} from './walking.mjs';
 import {createFloorMaterial,addArchitecture,addContactShade} from './architecture.mjs';
+import {mountUtilityGuide} from './utility-guide.mjs';
 import {mountWalletCenter} from './wallet-center.mjs';
 const $=s=>document.querySelector(s),stage=$('#scene'),status=$('#status'),panel=$('#panel'),body=$('#panel-body');
 try{
@@ -56,7 +57,7 @@ try{
  function show(d=null){
  disposeWallet();disposeWallet=()=>{};body.replaceChildren();$('#panel-title').textContent=d?d.name:'1AGE';
  const make=(tag,content)=>{const e=document.createElement(tag);e.textContent=content;body.append(e);return e;};
- if(d){make('p',d.note);if(d.id==='wallet')disposeWallet=mountWalletCenter(body);}
+ if(d){make('p',d.note);if(d.id==='wallet')disposeWallet=mountWalletCenter(body);if(['payment','swap','global'].includes(d.id))mountUtilityGuide(body,d.id==='swap'?'everyday':'international');}
  else{for(const [n,url] of [['1AGE World','https://1age.world/'],['1AGE.com','https://1age.com/'],['1AGE Cash','https://1age.cash/'],['Existing Exchange','../application.html']]){const a=make('a',n);a.href=url;}const select=make('select','');select.setAttribute('aria-label','Graphics resolution');for(const [n,v] of [['Low','0.8'],['Balanced','1.5'],['High','2']])select.add(new Option(n,v));select.value=String(quality);select.onchange=()=>{quality=Number(select.value);resize();};}
  walker.clear();if(!panel.open)panel.showModal();
  }
