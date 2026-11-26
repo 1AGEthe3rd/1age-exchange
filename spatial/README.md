@@ -15,3 +15,6 @@ Guest exploration without a wallet; wallet connection only on deliberate button 
 - Recheck main and concurrent PRs before merge; obtain approval before production root cutover. Existing root iframe, application.html, wallet adapter, World, HQ1/HQ2 and all DNS remain untouched.
 
 This is source implementation only; browser/device and live wallet validation have not been performed.
+
+## Utility Guide 001
+Purpose-first educational catalog: international remittances, everyday payments and reduced price volatility. Includes XLM, SOL, and USDC on Stellar/Solana with official documentation links and cost/risk caveats. Accessible on demand in Payment, Exchange and Global Finance departments. No current fee quotes, cheapest-route claims, Stellar wallet connection, transaction execution or automatic asset selection. Future contextual notifications should compare supported end-to-end routes, net recipient amount, conversion, ramp fees, network compatibility and quote freshness; include conventional services where appropriate. Browser validation pending.
